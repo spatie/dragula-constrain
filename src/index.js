@@ -32,8 +32,8 @@ const observe = (element, container) => {
 
 const ensureElementStaysInContainer = (domElement, domContainer) => {
 
-    const element = getElementBoundsAndDimensions(domElement);
-    const container = getContainerBounds(domContainer);
+    const element = elementBoundsAndDimensions(domElement);
+    const container = containerBounds(domContainer);
 
     if (element.left < container.left) {
         domElement.style.left = `${container.left}px`;
@@ -52,20 +52,7 @@ const ensureElementStaysInContainer = (domElement, domContainer) => {
     }
 };
 
-const getContainerBounds = container => {
-
-    const { scrollTop, scrollLeft } = document.body;
-    const { top, left, bottom, right } = container.getBoundingClientRect();
-
-    return {
-        top: scrollTop + top,
-        left: scrollLeft + left,
-        bottom: scrollTop + bottom,
-        right: scrollLeft + right,
-    };
-};
-
-const getElementBoundsAndDimensions = element => {
+const elementBoundsAndDimensions = element => {
 
     const top = parseInt(element.style.top);
     const left = parseInt(element.style.left);
@@ -76,6 +63,19 @@ const getElementBoundsAndDimensions = element => {
         top, left, height, width,
         bottom: top + height,
         right: left + width,
+    };
+};
+
+const containerBounds = container => {
+
+    const { scrollTop, scrollLeft } = document.body;
+    const { top, left, bottom, right } = container.getBoundingClientRect();
+
+    return {
+        top: scrollTop + top,
+        left: scrollLeft + left,
+        bottom: scrollTop + bottom,
+        right: scrollLeft + right,
     };
 };
 
