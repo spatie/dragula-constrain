@@ -13,7 +13,6 @@ export const constrain = dragula => {
     });
 
     return dragula;
-
 };
 
 const observe = (element, container) => {
