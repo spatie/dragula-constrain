@@ -18,9 +18,12 @@ export const constrain = dragula => {
 const observe = (element, container) => {
 
     const observer = new MutationObserver(mutations => {
-        mutations.filter(m => m.attributeName === 'style').forEach(() => {
-            ensureElementStaysInContainer(element, container);
-        });
+
+        if (mutations.find(m => m.attributeName === 'style') === undefined) {
+            return;
+        }
+
+        ensureElementStaysInContainer(element, container);
     });
 
     observer.observe(element, { attributes: true });
