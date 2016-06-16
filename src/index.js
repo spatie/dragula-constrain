@@ -9,7 +9,7 @@ export const constrain = dragula => {
     });
 
     dragula.on('dragend', function () {
-        this.constraint.break();
+        this.constraint.disconnect();
     });
 
     return dragula;
@@ -25,9 +25,7 @@ const observe = (element, container) => {
 
     observer.observe(element, { attributes: true });
 
-    return {
-        break: () => observer.disconnect(),
-    };
+    return observer;
 };
 
 const ensureElementStaysInContainer = (domElement, domContainer) => {
