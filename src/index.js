@@ -67,17 +67,6 @@ const elementBoundsAndDimensions = element => {
     };
 };
 
-const containerBounds = container => {
-
-    const { scrollTop, scrollLeft } = document.body;
-    const { top, left, bottom, right } = container.getBoundingClientRect();
-
-    return {
-        top: scrollTop + top,
-        left: scrollLeft + left,
-        bottom: scrollTop + bottom,
-        right: scrollLeft + right,
-    };
-};
+const containerBounds = container => container.getBoundingClientRect();
 
 export default constrain;
