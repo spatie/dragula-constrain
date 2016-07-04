@@ -19,7 +19,7 @@ const observe = (element, container) => {
 
     const observer = new MutationObserver(mutations => {
 
-        if (mutations.find(mutation => mutation.attributeName === 'style') === undefined) {
+        if (mutations.filter(mutation => mutation.attributeName === 'style').length === 0) {
             return;
         }
 
