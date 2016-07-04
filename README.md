@@ -25,7 +25,7 @@ $ npm install dragula-constrain
 import dragula from 'dragula';
 import constrain from 'dragula-constrain';
 
-// Set up `myContainer` and `options`..?
+// Set up `myContainer` and `options`...
 
 const dragula = dragula(myContainer, options);
 
