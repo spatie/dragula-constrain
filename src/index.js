@@ -1,34 +1,15 @@
 export const constrain = dragula => {
 
-    if ( ! ('MutationObserver' in window)) {
-        return;
-    }
-
     dragula.on('cloned', function (clone) {
-        this.constraint = observe(clone, this.containers[0]);
+        this.constraint = () => ensureElementStaysInContainer(clone, this.containers[0]);
+        window.addEventListener('mousemove', this.constraint);
     });
 
     dragula.on('dragend', function () {
-        this.constraint.disconnect();
+        window.removeEventListener('mousemove', this.constraint);
     });
 
     return dragula;
-};
-
-const observe = (element, container) => {
-
-    const observer = new MutationObserver(mutations => {
-
-        if (mutations.filter(mutation => mutation.attributeName === 'style').length === 0) {
-            return;
-        }
-
-        ensureElementStaysInContainer(element, container);
-    });
-
-    observer.observe(element, { attributes: true });
-
-    return observer;
 };
 
 const ensureElementStaysInContainer = (domElement, domContainer) => {
