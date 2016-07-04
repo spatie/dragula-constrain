@@ -1,6 +1,6 @@
 {
   "name": "dragula-constrain",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Constrain mirrors to their containers with Dragula",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
