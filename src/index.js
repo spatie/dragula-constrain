@@ -1,6 +1,6 @@
 export const constrain = dragula => {
 
-    if (!MutationObserver) {
+    if ( ! ('MutationObserver' in window)) {
         return;
     }
 
