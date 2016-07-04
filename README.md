@@ -17,7 +17,7 @@ $ npm install dragula-constrain
 
 ## Browser support
 
-Since `dragula-constrain` supports all modern browsers, and IE11+. IE support can be improved by polyfilling `MutationObserver`. If `MutationObserver` isn't available in the browser, `constrain` will silently fail without breaking the rest of your code, since it's general use case is progressive enhancement.
+`dragula-constrain` supports at least all modern browsers, starting from IE10.
 
 ## Usage
 
@@ -35,10 +35,6 @@ constrain(dragula);
 That's it! The mirror shouldn't spill out of the container anymore while dragging.
 
 This package assumes that the mirror has a fixed position, and the container is non-fixed. It currently only supports constraining mirrors to Dragula's first container (custom container support might get implemented in the future).
-
-`constrain` will create a `MutationObserver` on the mirror, and ensure the `left` and `top` properties never leave the bounds of the container. This solution is quite hacky, but necessary since Dragula doesn't provide any hooks or events to constrain the mirror's movement.
-
-## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
