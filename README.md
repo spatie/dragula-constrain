@@ -9,7 +9,7 @@ Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview 
 
 ## Support us
 
-[![Image](https://github-ads.s3.eu-central-1.amazonaws.com/dragula-constrain.jpg)](https://spatie.be/github-ad-click/dragula-constrain)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/dragula-constrain.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/dragula-constrain)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
